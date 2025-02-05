@@ -1,23 +1,15 @@
 package ru.netology.java.vacation.services;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class VacationServiceTest {
 
     @Test
-    void testCalculateWithExampleOne() {
-        VacationService service = new VacationService();
-        int actual = service.calculate(10000, 3000);
-        int expected = 3;
-        Assertions.assertEquals(expected, actual);
-    }
+    public void testCalculate() {
+        VacationService calculator = new VacationService();
 
-    @Test
-    void testCalculateWithExampleTwo() {
-        VacationService service = new VacationService();
-        int actual = service.calculate(100000, 60000);
-        int expected = 2;
-        Assertions.assertEquals(expected, actual);
+        assertEquals(3, calculator.calculate(10000, 3000, 20000));
+        assertEquals(2, calculator.calculate(100000, 60000, 150000));
     }
 }
